@@ -159,29 +159,55 @@ public class UJPL extends JFrame {
 					while (i <= lineByLine.length && running) {
 						String[] fullArray = lineByLine[i].toString().split(";");
 						if (fullArray[0].equals("if")) {
-							if (fullArray[1].equals(">")) {
-								if (Integer.parseInt(fullArray[2]) > Integer.parseInt(fullArray[3])) {
+							if (fullArray[2].equals(">")) {
+								if (Integer.parseInt(fullArray[1]) > Integer.parseInt(fullArray[3])) {
 									truthVar = true;
+									System.out.println("truthVar is now TRUE");
 								}
 								else {
 									truthVar = false;
+									System.out.println("truthVar is now FALSE");
 								}
 							}
 						}
 						if (fullArray[0].equals("true")) {
 							if (truthVar) {
-								
+								for (int xyz = 0; xyz<fullArray.length; xyz++) {
+									if (xyz == 0) {
+										fullArray[xyz] = "";
+									}
+									else {
+										fullArray[xyz-1] = fullArray[xyz];
+									}
+									
+									if (xyz == fullArray.length) {
+										i--;
+										break;
+									}
+								}
 							}
 							else {
-								i++;
+								//i++;
 							}
 						}
 						if (fullArray[0].equals("false")) {
 							if (!truthVar) {
-								
+								for (int xyz = 0; xyz<fullArray.length; xyz++) {
+									if (xyz == 0) {
+										fullArray[xyz] = "";
+									}
+									else {
+										fullArray[xyz-1] = fullArray[xyz];
+									}
+									
+									if (xyz == fullArray.length) {
+										i--;
+										break;
+									}
+								}
 							}
 							else {
-								i++;
+								//i++;
 							}
 						}
 						if (fullArray[0].equals("return")) {
