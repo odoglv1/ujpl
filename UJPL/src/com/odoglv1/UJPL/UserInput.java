@@ -57,7 +57,7 @@ public class UserInput extends JDialog {
 		JButton btnOk = new JButton("OK");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				UJPL.getInput();
+				UJPL.mostRecentInput = textField.getText();
 				dispose();
 			}
 		});

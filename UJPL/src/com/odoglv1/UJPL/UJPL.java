@@ -48,7 +48,7 @@ public class UJPL extends JFrame {
 	private int i = 0;
 	private boolean running = false;
 	private boolean truthVar = false;
-	private static String mostRecentInput = null;
+	public static String mostRecentInput = null;
 
 	/**
 	 * Launch the application.
@@ -161,6 +161,37 @@ public class UJPL extends JFrame {
 						if (fullArray[0].equals("if")) {
 							if (fullArray[2].equals(">")) {
 								if (Integer.parseInt(fullArray[1]) > Integer.parseInt(fullArray[3])) {
+									truthVar = true;
+									System.out.println("truthVar is now TRUE");
+								}
+								else {
+									truthVar = false;
+									System.out.println("truthVar is now FALSE");
+								}
+							}
+							if (fullArray[2].equals("==")) {
+								if (Integer.parseInt(fullArray[1]) == Integer.parseInt(fullArray[3])) {
+									truthVar = true;
+									System.out.println("truthVar is now TRUE");
+								}
+								else {
+									truthVar = false;
+									System.out.println("truthVar is now FALSE");
+								}
+							}
+							if (fullArray[2].equals("<")) {
+								if (Integer.parseInt(fullArray[1]) < Integer.parseInt(fullArray[3])) {
+									truthVar = true;
+									System.out.println("truthVar is now TRUE");
+								}
+								else {
+									truthVar = false;
+									System.out.println("truthVar is now FALSE");
+								}
+							}
+							
+							if (fullArray[2].equals("str==")) {
+								if (fullArray[1].toString().equals(fullArray[3].toString())) {
 									truthVar = true;
 									System.out.println("truthVar is now TRUE");
 								}
@@ -415,9 +446,5 @@ public class UJPL extends JFrame {
 		});
 		mnFile.add(mntmSaveCurrentDocument);
 		mnFile.add(mntmExit);
-	}
-	
-	public static void getInput() {
-		mostRecentInput = UserInput.textField.getText().toString();
 	}
 }
