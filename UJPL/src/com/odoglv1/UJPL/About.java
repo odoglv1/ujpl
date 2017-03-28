@@ -66,7 +66,7 @@ public class About extends JFrame {
 		txtpnUjpl.setBounds(-1, 311, 295, 53);
 		JScrollPane scroll = new JScrollPane(txtpnUjpl, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		txtpnUjpl.setEditable(false);
-		txtpnUjpl.setText("UJPL - The Universal Java-Based Programming Language.\r\nCopyleft Odoglv1 2016-2017.\r\nIcon by Odoglv1.");
+		txtpnUjpl.setText("UJPL - The Universal Java-Based Programming Language.\r\nCopyright Odoglv1 2016-2017.\r\nIcon by Odoglv1.");
 		scroll.setBounds(-1, 311, 295, 53);
 		contentPane.add(scroll);
 		
